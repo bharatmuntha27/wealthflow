@@ -1,0 +1,403 @@
+:root {
+  --primary-green: #0b7d1c;
+  --secondary-green: #27ae38;
+  --lime-green: #7fd321;
+  --yellow-green: #d4e51a;
+  --dark-text: #1f2937;
+  --light-text: #64748b;
+  --white: #ffffff;
+  --bg-light: #f7fcf5;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+.login-container {
+  display: flex;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+/* =========================
+   LEFT SECTION
+========================= */
+
+.login-left {
+  flex: 1;
+  background: linear-gradient(
+    135deg,
+    #0b7d1c 0%,
+    #27ae38 35%,
+    #7fd321 70%,
+    #d4e51a 100%
+  );
+
+  color: white;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 60px;
+  position: relative;
+}
+
+.login-left::before {
+  content: "";
+  position: absolute;
+  width: 450px;
+  height: 450px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.08);
+  top: -150px;
+  right: -150px;
+}
+
+.login-left::after {
+  content: "";
+  position: absolute;
+  width: 350px;
+  height: 350px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.08);
+  bottom: -120px;
+  left: -120px;
+}
+
+.brand-section {
+  position: relative;
+  z-index: 2;
+  max-width: 520px;
+}
+
+.logo {
+  width: 140px;
+  margin-bottom: 30px;
+}
+
+.brand-section h1 {
+  font-size: 54px;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.brand-section span {
+  color: #fff;
+}
+
+.brand-section h2 {
+  font-size: 32px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.brand-section p {
+  font-size: 17px;
+  line-height: 1.8;
+  opacity: 0.95;
+}
+
+/* =========================
+   RIGHT SECTION
+========================= */
+
+.login-right {
+  flex: 1;
+  background:
+    radial-gradient(
+      circle at top right,
+      rgba(127, 211, 33, 0.18),
+      transparent 35%
+    ),
+    radial-gradient(
+      circle at bottom left,
+      rgba(39, 174, 56, 0.12),
+      transparent 40%
+    ),
+    #f8fff7;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+}
+
+/* =========================
+   LOGIN CARD
+========================= */
+
+.login-card {
+  width: 100%;
+  max-width: 470px;
+
+  background: rgba(255,255,255,0.95);
+
+  backdrop-filter: blur(15px);
+
+  padding: 45px;
+
+  border-radius: 28px;
+
+  border: 1px solid rgba(127,211,33,0.15);
+
+  box-shadow:
+    0 25px 50px rgba(11,125,28,0.10),
+    0 10px 25px rgba(0,0,0,0.05);
+}
+
+.card-header {
+  text-align: center;
+  margin-bottom: 35px;
+}
+
+.card-header h2 {
+  font-size: 32px;
+  color: var(--dark-text);
+  margin-bottom: 10px;
+}
+
+.card-header p {
+  color: var(--light-text);
+  font-size: 15px;
+}
+
+/* =========================
+   INPUTS
+========================= */
+
+.input-group {
+  position: relative;
+  margin-bottom: 22px;
+}
+
+.input-group input {
+  width: 100%;
+  height: 58px;
+
+  padding: 0 55px;
+
+  border: 1px solid #e2e8f0;
+
+  border-radius: 14px;
+
+  font-size: 15px;
+
+  transition: all 0.3s ease;
+
+  background: white;
+}
+
+.input-group input:focus {
+  outline: none;
+
+  border-color: var(--secondary-green);
+
+  box-shadow:
+    0 0 0 4px rgba(39,174,56,0.12);
+}
+
+.input-icon {
+  position: absolute;
+  left: 18px;
+  top: 20px;
+
+  font-size: 18px;
+
+  color: #94a3b8;
+}
+
+.eye-icon {
+  position: absolute;
+  right: 18px;
+  top: 20px;
+
+  font-size: 18px;
+
+  color: #94a3b8;
+  cursor: pointer;
+}
+
+/* =========================
+   OPTIONS
+========================= */
+
+.login-options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin-bottom: 25px;
+
+  font-size: 14px;
+}
+
+.login-options label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--light-text);
+}
+
+.login-options input[type="checkbox"] {
+  accent-color: var(--primary-green);
+}
+
+.forgot-link {
+  color: var(--primary-green);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.forgot-link:hover {
+  color: var(--lime-green);
+}
+
+/* =========================
+   BUTTON
+========================= */
+
+.login-btn {
+  width: 100%;
+  height: 58px;
+
+  border: none;
+  border-radius: 14px;
+
+  background: linear-gradient(
+    90deg,
+    #0b7d1c,
+    #27ae38,
+    #7fd321
+  );
+
+  color: white;
+
+  font-size: 16px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: all 0.3s ease;
+}
+
+.login-btn:hover {
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 15px 25px rgba(11,125,28,0.25);
+}
+
+.login-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+/* =========================
+   ERROR BOX
+========================= */
+
+.error-box {
+  background: #fef2f2;
+  color: #dc2626;
+
+  border-left: 4px solid #dc2626;
+
+  padding: 14px;
+
+  border-radius: 10px;
+
+  margin-bottom: 20px;
+
+  font-size: 14px;
+}
+
+/* =========================
+   DIVIDER
+========================= */
+
+.divider {
+  text-align: center;
+  margin: 25px 0;
+  position: relative;
+}
+
+.divider span {
+  background: white;
+  padding: 0 15px;
+  color: #94a3b8;
+  position: relative;
+  z-index: 2;
+}
+
+.divider::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+
+  width: 100%;
+  height: 1px;
+
+  background: #e5e7eb;
+}
+
+/* =========================
+   REGISTER
+========================= */
+
+.register-link {
+  text-align: center;
+  color: var(--light-text);
+}
+
+.register-link a {
+  color: var(--primary-green);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.register-link a:hover {
+  color: var(--lime-green);
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 992px) {
+  .login-left {
+    display: none;
+  }
+
+  .login-right {
+    width: 100%;
+  }
+
+  .login-card {
+    width: 100%;
+    max-width: 500px;
+  }
+}
+
+@media (max-width: 576px) {
+  .login-card {
+    padding: 30px;
+    border-radius: 20px;
+  }
+
+  .card-header h2 {
+    font-size: 26px;
+  }
+
+  .login-options {
+    flex-direction: column;
+    gap: 12px;
+    align-items: flex-start;
+  }
+}

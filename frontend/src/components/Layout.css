@@ -1,0 +1,199 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.app-layout {
+  display: flex;
+  min-height: 100vh;
+  background: #f7fff4;
+}
+
+/* Sidebar */
+
+.app-sidebar {
+  width: 260px;
+  background: linear-gradient(
+    180deg,
+    #0A7A16,
+    #086312
+  );
+  color: white;
+  position: fixed;
+  height: 100vh;
+  left: 0;
+  top: 0;
+  padding: 20px;
+  overflow-y: auto;
+  box-shadow: 5px 0 20px rgba(10, 122, 22, 0.15);
+}
+
+.app-brand {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.app-brand img {
+  width: 80px;
+  margin-bottom: 10px;
+  background: white;
+  padding: 5px;
+  border-radius: 50%;
+}
+
+.app-brand h2 {
+  color: white;
+}
+
+.app-brand span {
+  color: #E5D21A;
+}
+
+/* Navigation */
+
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.sidebar-nav a {
+  color: white;
+  text-decoration: none;
+  padding: 14px 16px;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.sidebar-nav a:hover {
+  background: rgba(255,255,255,0.12);
+  transform: translateX(5px);
+}
+
+.sidebar-nav .active {
+  background: #E5D21A;
+  color: #0A7A16;
+  font-weight: 700;
+  box-shadow: 0 8px 20px rgba(229, 210, 26, 0.3);
+}
+
+/* Logout Button */
+
+.logout-btn {
+  margin-top: 20px;
+  background: linear-gradient(
+    135deg,
+    #ca8a04,
+    #eab308
+  );
+  color: white;
+  border: none;
+  padding: 14px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.logout-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(202, 138, 4, 0.25);
+}
+
+/* Main Content */
+
+.app-main {
+  margin-left: 260px;
+  width: calc(100% - 260px);
+}
+
+/* Top Bar */
+
+.app-topbar {
+  height: 70px;
+  background: white;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 0 25px;
+  box-shadow: 0 2px 12px rgba(10, 122, 22, 0.08);
+  border-bottom: 2px solid #f0fdf4;
+}
+
+.app-user {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.app-avatar {
+  width: 45px;
+  height: 45px;
+  background: linear-gradient(
+    135deg,
+    #0A7A16,
+    #2FAE1A
+  );
+  color: white;
+  border-radius: 50%;
+  font-weight: bold;
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.app-user h4 {
+  margin: 0;
+  color: #0A7A16;
+}
+
+.app-user p {
+  font-size: 13px;
+  color: #64748b;
+}
+
+/* Content */
+
+.app-content {
+  padding: 25px;
+}
+
+/* Mobile */
+
+@media (max-width: 768px) {
+
+  .app-sidebar {
+    width: 220px;
+  }
+
+  .app-main {
+    margin-left: 220px;
+    width: calc(100% - 220px);
+  }
+
+}
+
+@media (max-width: 600px) {
+
+  .app-sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+  }
+
+  .app-main {
+    margin-left: 0;
+    width: 100%;
+  }
+
+  .sidebar-nav {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+}

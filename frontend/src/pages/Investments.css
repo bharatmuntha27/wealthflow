@@ -1,0 +1,113 @@
+.investments-page {
+  min-height: 100vh;
+  background: #f5f7f4;
+  padding: 30px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.investments-page h1 {
+  color: #0b7a20;
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 25px;
+}
+
+.investment-table-card {
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 25px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  border-top: 6px solid #2dbe3f;
+  overflow-x: auto;
+}
+
+.investment-table-card table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.investment-table-card thead {
+  background: linear-gradient(135deg, #0b7a20, #2dbe3f);
+}
+
+.investment-table-card th {
+  color: #ffffff;
+  padding: 16px;
+  text-align: left;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.investment-table-card td {
+  padding: 16px;
+  border-bottom: 1px solid #e5e7eb;
+  color: #374151;
+  font-size: 15px;
+}
+
+.investment-table-card tbody tr {
+  transition: all 0.3s ease;
+}
+
+.investment-table-card tbody tr:hover {
+  background: #f6fff5;
+}
+
+/* Status Badge */
+
+.status {
+  display: inline-block;
+  padding: 8px 15px;
+  border-radius: 30px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+/* Active */
+
+.status.active {
+  background: #dcfce7;
+  color: #0b7a20;
+}
+
+/* Completed */
+
+.status.completed {
+  background: #d1fae5;
+  color: #15803d;
+}
+
+/* Cancelled */
+
+.status.cancelled {
+  background: #fee2e2;
+  color: #dc2626;
+}
+
+.empty-text {
+  text-align: center;
+  color: #6b7280;
+  font-size: 16px;
+  margin: 40px 0;
+  font-weight: 500;
+}
+
+/* Responsive */
+
+@media (max-width: 768px) {
+  .investments-page {
+    padding: 15px;
+  }
+
+  .investments-page h1 {
+    font-size: 26px;
+  }
+
+  .investment-table-card {
+    padding: 20px;
+  }
+
+  .investment-table-card table {
+    min-width: 700px;
+  }
+}
