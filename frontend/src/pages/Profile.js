@@ -1,7 +1,7 @@
 
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import Layout from "../components/Layout";
+import Layout from "../components/Layout/Layout";
 import "./Profile.css";
 import { FaWallet,  FaChartLine,  FaCoins,  FaUsers} from "react-icons/fa";
 function Profile() {

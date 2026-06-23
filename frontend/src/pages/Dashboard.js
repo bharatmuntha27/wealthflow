@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "./Dashboard.css";
-import Layout from "../components/Layout";
+import Layout from "../components/Layout/Layout";
 
 import {
   FaPiggyBank,
@@ -55,7 +55,7 @@ function Dashboard() {
       </Layout>
     );
   }
-
+      
   return (
     <Layout>
       <div className="dashboard-page">
@@ -69,9 +69,7 @@ function Dashboard() {
             </p>
           </div>
 
-          <div className="date-box">
-            {new Date().toLocaleDateString("en-IN")}
-          </div>
+         
         </div>
 
         <div className="cards">
