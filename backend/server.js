@@ -1,5 +1,6 @@
 const express = require("express");
 const dotenv = require("dotenv");
+
 const cors = require("cors");
 const connectDB = require("./config/db");
 
@@ -11,6 +12,9 @@ const roiRoutes = require("./routes/roiRoutes");
 const referralIncomeRoutes = require("./routes/referralIncomeRoutes");
 const walletRoutes = require("./routes/walletRoutes");
 const userRoutes = require("./routes/userRoutes");
+const adminRoutes = require("./routes/adminRoutes");
+// const paymentRoutes = require("./routes/paymentRoutes");
+const withdrawRoutes =require("./routes/withdrawRoutes");
 
 // ROI Cron
 require("./cron/roiCron");
@@ -68,6 +72,9 @@ app.use("/api/roi", roiRoutes);
 app.use("/api/referral-income", referralIncomeRoutes);
 app.use("/api/wallet", walletRoutes);
 app.use("/api/users", userRoutes);
+app.use("/api/admin", adminRoutes);
+app.use("/api/withdraw", withdrawRoutes);
+// app.use("/api/payment", paymentRoutes);
 
 // 404 Handler
 app.use((req, res) => {

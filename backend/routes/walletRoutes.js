@@ -10,5 +10,6 @@ const {
 
 router.get("/", protect, getWalletSummary);
 router.get("/transactions", protect, getWalletTransactions);
+router.get("/history", protect, getWalletTransactions);
 
 module.exports = router;

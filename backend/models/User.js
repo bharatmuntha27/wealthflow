@@ -25,7 +25,11 @@ const userSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
-
+   role: {
+    type: String,
+    enum: ["user", "admin"],
+    default: "user"
+},
     referralCode: {
       type: String,
       unique: true,
@@ -52,16 +56,63 @@ const userSchema = new mongoose.Schema(
       type: Number,
       default: 0,
     },
+     emailVerified: {
+      type: Boolean,
+      default: false,
+      },
 
-    accountStatus: {
-      type: String,
-      enum: ["Active", "Inactive", "Blocked"],
-      default: "Active",
-    },
-  },
+    mobileVerified: {
+      type: Boolean,
+      default: false,
+      }, 
+      twoFactorEnabled: {
+  type: Boolean,
+  default: false,
+},
+
+bankName: {
+  type: String,
+  default: "",
+},
+
+accountHolderName: {
+  type: String,
+  default: "",
+},
+
+accountNumber: {
+  type: String,
+  default: "",
+},
+
+ifscCode: {
+  type: String,
+  default: "",
+},
+
+upiId: {
+  type: String,
+  default: "",
+},
+
+resetPasswordToken: {
+  type: String,
+},
+
+resetPasswordExpires: {
+  type: Date,
+},
+
+accountStatus: {
+  type: String,
+  enum: ["Active", "Inactive", "Blocked"],
+  default: "Active",
+},
+  },    
   {
     timestamps: true,
   }
-);
+  );
+
 
 module.exports = mongoose.model("User", userSchema);
