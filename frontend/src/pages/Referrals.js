@@ -37,7 +37,6 @@ const fetchReferrals = useCallback(async () => {
         },
       }
     );
-
     setReferrals(data.referrals || []);
   } catch (error) {
     console.error(error);
