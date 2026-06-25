@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useCallback } from "react";
 import axios from "axios";
 import Layout from "../components/Layout/Layout";
 
@@ -20,90 +20,65 @@ function Referrals() {
   const [loading, setLoading] = useState(true);
   const [search, setSearch] = useState("");
 
-  useEffect(() => {
-    loadData();
-  }, []);
 
-  const loadData = async () => {
-    try {
 
-      setLoading(true);
+ const fetchProfile = useCallback(async () => {
+  try {
+    const token = localStorage.getItem("token");
 
-      await Promise.all([
-        fetchProfile(),
-        fetchReferrals(),
-        fetchReferralTree()
-      ]);
+    const { data } = await axios.get(
+      "http://localhost:5000/api/users/profile",
+      {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      }
+    );
 
-    } catch (error) {
-      console.log(error);
-    } finally {
-      setLoading(false);
-    }
-  };
+    setUser(data.user);
+  } catch (error) {
+    console.error(error);
+  }
+}, []);
 
-  const fetchProfile = async () => {
-    try {
+const fetchReferrals = useCallback(async () => {
+  try {
+    const token = localStorage.getItem("token");
 
-      const token = localStorage.getItem("token");
+    const { data } = await axios.get(
+      "http://localhost:5000/api/users/referrals/direct",
+      {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      }
+    );
 
-      const res = await axios.get(
-        "http://localhost:5000/api/users/profile",
-        {
-          headers: {
-            Authorization: `Bearer ${token}`
-          }
-        }
-      );
+    setReferrals(data.referrals || []);
+  } catch (error) {
+    console.error(error);
+  }
+}, []);
 
-      setUser(res.data.user);
 
-    } catch (error) {
-      console.log(error);
-    }
-  };
+const fetchReferralTree = useCallback(async () => {
+  try {
+    const token = localStorage.getItem("token");
 
-  const fetchReferrals = async () => {
-    try {
+    const { data } = await axios.get(
+      "http://localhost:5000/api/users/referrals/tree",
+      {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      }
+    );
 
-      const token = localStorage.getItem("token");
-
-      const res = await axios.get(
-        "http://localhost:5000/api/users/referrals/direct",
-        {
-          headers: {
-            Authorization: `Bearer ${token}`
-          }
-        }
-      );
-
-      setReferrals(res.data.referrals);
-
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
-  const fetchReferralTree = async () => {
-    try {
-
-      const token = localStorage.getItem("token");
-
-      const res = await axios.get(
-        "http://localhost:5000/api/users/referrals/tree",
-        {
-          headers: {
-            Authorization: `Bearer ${token}`
-          }
-        }
-      );
-
-      setTree(res.data.level1);
-
-    } catch (error) {
-      console.log(error);
-    }
-  };
+    setTree(data.level1 || []);
+  } catch (error) {
+    console.error(error);
+  }
+}, []);
 
   const copyReferralCode = () => {
     navigator.clipboard.writeText(
@@ -129,6 +104,26 @@ function Referrals() {
         ?.toLowerCase()
         .includes(search.toLowerCase())
   );
+
+  useEffect(() => {
+  const loadData = async () => {
+    setLoading(true);
+
+    try {
+      await Promise.all([
+        fetchProfile(),
+        fetchReferrals(),
+        fetchReferralTree(),
+      ]);
+    } catch (err) {
+      console.error(err);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  loadData();
+}, [fetchProfile, fetchReferrals, fetchReferralTree]);
 
   if (loading) {
     return (
