@@ -1,0 +1,479 @@
+/* Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:#0F1115;
+    color:#fff;
+}
+
+.home{
+    width:100%;
+    min-height:100vh;
+}
+
+/* ==========================
+      NAVBAR
+========================== */
+
+.navbar{
+
+    position:fixed;
+
+    width:100%;
+
+    top:0;
+
+    left:0;
+
+    z-index:999;
+
+    background:#080808;
+
+    border-bottom:1px solid rgba(255,255,255,.05);
+
+}
+.container{
+
+    width:90%;
+
+    margin:auto;
+
+    height:85px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+}
+
+.logo-section{
+
+display:flex;
+
+align-items:center;
+
+gap:15px;
+
+}
+
+.logo{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+}
+.logo img{
+
+    width:58px;
+
+}
+
+.logo span{
+
+    color:#fff;
+
+    font-size:34px;
+
+    font-weight:700;
+
+}
+
+.menu{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:40px;
+
+    list-style:none;
+
+}
+
+.menu li{
+
+    list-style:none;
+
+}
+
+.menu li a{
+
+    color:#fff;
+
+    text-decoration:none;
+
+    font-size:17px;
+
+    transition:.3s;
+
+}
+
+.menu li a:hover{
+
+    color:#42B72A;
+
+}
+
+.buttons{
+
+    display:flex;
+
+    gap:15px;
+
+}
+
+.login{
+
+    padding:12px 28px;
+
+    border:1px solid #444;
+
+    border-radius:40px;
+
+    text-decoration:none;
+
+    color:white;
+
+}
+
+.login:hover{
+
+    border-color:#42B72A;
+
+}
+
+.register{
+
+    padding:12px 30px;
+
+    border-radius:40px;
+
+    text-decoration:none;
+
+    background:linear-gradient(90deg,#42B72A,#C8E600);
+
+    color:#000;
+
+    font-weight:600;
+
+}
+
+.register:hover{
+
+    transform:translateY(-2px);
+
+}
+
+.logo-section h2{
+
+font-size:34px;
+
+font-weight:700;
+
+color:white;
+
+}
+
+
+
+
+/* ================= NAVBAR ================= */
+
+.navbar{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    background:rgba(15,17,21,.95);
+    backdrop-filter:blur(12px);
+    border-bottom:1px solid rgba(255,255,255,.08);
+    z-index:1000;
+}
+
+.container{
+    width:90%;
+    max-width:1400px;
+    margin:auto;
+    height:90px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:14px;
+}
+
+.logo img{
+    width:58px;
+}
+
+.logo span{
+    color:#fff;
+    font-size:32px;
+    font-weight:700;
+}
+
+.menu{
+    display:flex;
+    list-style:none;
+    gap:40px;
+}
+
+.menu li{
+    list-style:none;
+}
+
+.menu a{
+    color:#d9d9d9;
+    text-decoration:none;
+    font-weight:500;
+    transition:.3s;
+}
+
+.menu a:hover{
+    color:#42B72A;
+}
+
+.buttons{
+    display:flex;
+    gap:16px;
+}
+
+.login{
+       padding:12px 28px;
+    border-radius:40px;
+    text-decoration:none;
+    font-weight:600;
+    color:#fff;
+    background:linear-gradient(90deg,#0B7A24,#C8E600);
+    transition:.3s;
+}
+
+.login:hover{
+    background:#42B72A;
+    color:#fff;
+}
+
+.register{
+    padding:12px 28px;
+    border-radius:40px;
+    text-decoration:none;
+    font-weight:600;
+    color:#fff;
+    background:linear-gradient(90deg,#0B7A24,#C8E600);
+    transition:.3s;
+}
+
+.register:hover{
+    transform:translateY(-3px);
+    box-shadow:0 10px 25px rgba(66,183,42,.35);
+}
+
+/* ==========================
+      HERO
+========================== */
+
+.hero{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:150px 8%;
+    min-height:100vh;
+}
+
+.hero-left{
+    width:50%;
+    color:#2da541;
+}
+
+.tag{
+    display:inline-block;
+    background:linear-gradient(90deg,#0B7A24,#C8E600);
+    color:#fff;
+    padding:8px 20px;
+    border-radius:30px;
+    margin-bottom:25px;
+    font-weight:600;
+}
+
+.hero-left h1{
+    font-size:65px;
+    line-height:75px;
+    margin-bottom:20px;
+}
+
+.hero-left p{
+    color:#bfbfbf;
+    font-size:18px;
+    line-height:32px;
+    margin-bottom:40px;
+}
+
+.hero-buttons{
+    display:flex;
+    gap:20px;
+}
+
+.start-btn{
+    background:linear-gradient(90deg,#0B7A24,#C8E600);
+    color:#fff;
+    text-decoration:none;
+    padding:16px 36px;
+    border-radius:40px;
+    font-weight:600;
+    transition:.3s;
+}
+.learn-btn{
+     background:linear-gradient(90deg,#0B7A24,#C8E600);
+    color:#fff;
+    text-decoration:none;
+    padding:16px 36px;
+    border-radius:40px;
+    font-weight:600;
+    transition:.3s;
+}
+
+.start-btn:hover,
+.learn-btn:hover{
+    transform:translateY(-4px);
+}
+
+/* ==========================
+      DASHBOARD CARD
+========================== */
+
+.hero-right{
+    width:40%;
+    display:flex;
+    flex-direction:column;
+    gap:25px;
+}
+
+.dashboard-card{
+    background:#161A20;
+    border-radius:25px;
+    padding:35px;
+    border:1px solid rgba(255,255,255,.08);
+    box-shadow:0 0 35px rgba(212,175,55,.15);
+}
+
+.dashboard-card h3{
+    color:#aaa;
+}
+
+.dashboard-card h1{
+    color:#42B72A;
+    font-size:48px;
+    margin:20px 0;
+}
+
+.dashboard-card p{
+    color:#C8E600;
+}
+
+.small-card{
+    background:#1C2128;
+    border-radius:20px;
+    padding:25px;
+    border:1px solid rgba(255,255,255,.08);
+}
+
+.small-card h4{
+    color:#999;
+}
+
+.small-card h2{
+    margin-top:10px;
+    color:#fff;
+}
+
+/* ==========================
+      MOBILE
+========================== */
+
+@media(max-width:992px){
+
+.hero{
+    flex-direction:column;
+    text-align:center;
+    padding-top:130px;
+}
+
+.hero-left,
+.hero-right{
+    width:100%;
+}
+
+.hero-left h1{
+    font-size:45px;
+    line-height:55px;
+}
+
+.hero-buttons{
+    justify-content:center;
+}
+
+.hero-right{
+    margin-top:50px;
+}
+
+
+.nav-links a:hover{
+    color:#42B72A;
+}
+
+.nav-menu{
+
+    list-style:none;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:40px;
+
+}
+
+.nav-menu li{
+
+    list-style:none;
+
+}
+
+.nav-menu li a{
+
+    color:#fff;
+
+    text-decoration:none;
+
+    font-size:17px;
+
+    font-weight:500;
+
+    transition:.3s;
+
+}
+
+.nav-menu li a:hover{
+
+    color:#42B72A;
+
+}
+}

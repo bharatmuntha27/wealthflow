@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import axios from "axios";
+import api from "../api/axios";
 import "./Dashboard.css";
 import Layout from "../components/Layout/Layout";
 
@@ -24,8 +24,7 @@ function Dashboard() {
     try {
       const token = localStorage.getItem("token");
 
-      const res = await axios.get(
-        "http://localhost:5000/api/dashboard",
+      const res = await api.get( "/dashboard",
         {
           headers: {
             Authorization: `Bearer ${token}`,
