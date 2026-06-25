@@ -1,19 +1,7 @@
 import React, { useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 
-import {
-  FaTachometerAlt,
-  FaChartLine,
-  FaUsers,
-  FaWallet,
-  FaUserCircle,
-  FaSignOutAlt,
-  FaMoneyBillWave,
-  FaBars,
-  FaTimes,
-    FaArrowDown,
-  FaArrowUp,
-} from "react-icons/fa";
+import {  FaTachometerAlt,  FaChartLine,  FaUsers,  FaWallet,  FaUserCircle,  FaSignOutAlt,  FaMoneyBillWave,  FaBars,  FaTimes,    FaArrowDown,  FaArrowUp,} from "react-icons/fa";
 
 import "./Layout.css";
 
