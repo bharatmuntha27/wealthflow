@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import axios from "axios";
+import api from "../api/axios";
 import { Link, useNavigate } from "react-router-dom";
 import {
   FaEnvelope,
@@ -42,8 +42,8 @@ const Login = () => {
     try {
       setLoading(true);
 
-      const response = await axios.post(
-  "https://wealthflow-backend-ftlv.onrender.com/api/auth/login",
+const response = await api.post(
+  "/auth/login",
   formData
 );
 
