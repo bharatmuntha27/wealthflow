@@ -1,31 +1,17 @@
 import React, { useEffect, useState, useCallback } from "react";
 import axios from "axios";
 import Layout from "../components/Layout/Layout";
-
-import {
-  FaUsers,
-  FaUserFriends,
-  FaMoneyBillWave,
-  FaCopy,
-  FaLink
-} from "react-icons/fa";
-
+import {  FaUsers,  FaUserFriends,  FaMoneyBillWave,  FaCopy,  FaLink} from "react-icons/fa";
 import "./Referrals.css";
-
 function Referrals() {
-
   const [user, setUser] = useState(null);
   const [referrals, setReferrals] = useState([]);
   const [tree, setTree] = useState([]);
   const [loading, setLoading] = useState(true);
   const [search, setSearch] = useState("");
-
-
-
  const fetchProfile = useCallback(async () => {
   try {
     const token = localStorage.getItem("token");
-
     const { data } = await axios.get(
       "http://localhost:5000/api/users/profile",
       {
@@ -34,13 +20,11 @@ function Referrals() {
         },
       }
     );
-
     setUser(data.user);
   } catch (error) {
     console.error(error);
   }
 }, []);
-
 const fetchReferrals = useCallback(async () => {
   try {
     const token = localStorage.getItem("token");
