@@ -42,8 +42,6 @@ const fetchReferrals = useCallback(async () => {
     console.error(error);
   }
 }, []);
-
-
 const fetchReferralTree = useCallback(async () => {
   try {
     const token = localStorage.getItem("token");
@@ -62,7 +60,6 @@ const fetchReferralTree = useCallback(async () => {
     console.error(error);
   }
 }, []);
-
   const copyReferralCode = () => {
     navigator.clipboard.writeText(
       user?.referralCode || ""
@@ -70,7 +67,6 @@ const fetchReferralTree = useCallback(async () => {
 
     alert("Referral Code Copied");
   };
-
   const copyReferralLink = () => {
 
     const link =
