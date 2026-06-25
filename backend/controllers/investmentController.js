@@ -22,7 +22,7 @@ const createInvestment = async (req, res) => {
       investment,
     });
   } catch (error) {
-    res.status(500).json({
+    res.status(500).json({  
       success: false,
       message: error.message,
     });

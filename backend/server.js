@@ -30,7 +30,7 @@ app.use(
   cors({
     origin: [
       "http://localhost:3000",
-      "https://wealthflow-ak5g.vercel.app",
+      "https://wealthflow-seven.vercel.app",
     ],
     credentials: true,
   })
