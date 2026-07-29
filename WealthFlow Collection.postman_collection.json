@@ -1,0 +1,1037 @@
+{
+  "info": {
+    "_postman_id": "5a1960ee-f123-45be-8e18-9fc2f1f113ee",
+    "name": "WealthFlow Collection",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "41804328",
+    "_collection_link": "https://go.postman.co/collection/41804328-5a1960ee-f123-45be-8e18-9fc2f1f113ee?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "localhost",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": []
+    },
+    {
+      "name": "login",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"email\": \"bharat@gmail.com\",\r\n  \"password\": \"bharat@123\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:5000/api/auth/login",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "auth",
+            "login"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "register",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"fullName\": \"Bharath Kumar\",\r\n  \"email\": \"bharath@gmail.com\",\r\n  \"mobileNumber\": \"9876543210\",\r\n  \"password\": \"123456\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:5000/api/auth/register",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "auth",
+            "register"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "dashboard",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhMjkzNTJiNDZlY2YyMjZhMGZhMjI3NSIsImlhdCI6MTc4MTExMjcxNCwiZXhwIjoxNzgxNzE3NTE0fQ.RA1VUV-fQmmxpHP-vgRocIHM0_C5NNHwu21XZb-ebg0",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:5000/api/dashboard",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "dashboard"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "investments",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhMjkzNTJiNDZlY2YyMjZhMGZhMjI3NSIsImlhdCI6MTc4MTExMjcxNCwiZXhwIjoxNzgxNzE3NTE0fQ.RA1VUV-fQmmxpHP-vgRocIHM0_C5NNHwu21XZb-ebg0",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"investmentAmount\": 100000,\r\n  \"planName\": \"Gold Plan\",\r\n  \"startDate\": \"2026-06-15\",\r\n  \"endDate\": \"2026-12-15\",\r\n  \"dailyROI\": 1.5\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:5000/api/investments",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "investments"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "my investments",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhMjkzNTJiNDZlY2YyMjZhMGZhMjI3NSIsImlhdCI6MTc4MTExMjcxNCwiZXhwIjoxNzgxNzE3NTE0fQ.RA1VUV-fQmmxpHP-vgRocIHM0_C5NNHwu21XZb-ebg0",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:5000/api/investments/my",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "investments",
+            "my"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "direct",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": []
+    },
+    {
+      "name": "direct/post",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"fullName\": \"Ravi Kumar\",\r\n  \"email\": \"ravi@gmail.com\",\r\n  \"mobileNumber\": \"9876543211\",\r\n  \"password\": \"123456\",\r\n  \"referralCode\": \"BHAR45629\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:5000/api/auth/register",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "auth",
+            "register"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "tree",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhMjkzNTJiNDZlY2YyMjZhMGZhMjI3NSIsImlhdCI6MTc4MTExMjcxNCwiZXhwIjoxNzgxNzE3NTE0fQ.RA1VUV-fQmmxpHP-vgRocIHM0_C5NNHwu21XZb-ebg0",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"totalInvestments\": 50000,\r\n  \"walletBalance\": 0,\r\n  \"totalROIEarned\": 0,\r\n  \"totalLevelIncomeEarned\": 0\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:5000/api/referrals/tree",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "referrals",
+            "tree"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "history",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhMjkzNTJiNDZlY2YyMjZhMGZhMjI3NSIsImlhdCI6MTc4MTExMjcxNCwiZXhwIjoxNzgxNzE3NTE0fQ.RA1VUV-fQmmxpHP-vgRocIHM0_C5NNHwu21XZb-ebg0",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:5000/api/roi/history",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "roi",
+            "history"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "roi",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhMjkzNTJiNDZlY2YyMjZhMGZhMjI3NSIsImlhdCI6MTc4MTExMjcxNCwiZXhwIjoxNzgxNzE3NTE0fQ.RA1VUV-fQmmxpHP-vgRocIHM0_C5NNHwu21XZb-ebg0",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"investmentId\": \"6a2a6c41fea3643db8cd73a4\",\r\n  \"roiAmount\": 750,\r\n  \"roiDate\": \"2026-06-15\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:5000/api/roi/sample",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "roi",
+            "sample"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "roi_history",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": []
+    },
+    {
+      "name": "roi/run",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": []
+    },
+    {
+      "name": "New register",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"fullName\": \"Kranthi Kumar\",\r\n  \"email\": \"kranthi123@gmail.com\",\r\n  \"mobileNumber\": \"9876543220\",\r\n  \"password\": \"123456\",\r\n  \"referralCode\": \"BHAR45629\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:5000/api/auth/register",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "auth",
+            "register"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "New investment",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhMjkzNTJiNDZlY2YyMjZhMGZhMjI3NSIsImlhdCI6MTc4MTExMjcxNCwiZXhwIjoxNzgxNzE3NTE0fQ.RA1VUV-fQmmxpHP-vgRocIHM0_C5NNHwu21XZb-ebg0",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"investmentAmount\": 100000,\r\n  \"planName\": \"Gold Plan\",\r\n  \"startDate\": \"2026-06-15\",\r\n  \"endDate\": \"2026-12-15\",\r\n  \"dailyROI\": 1.5\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:5000/api/investments",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "investments"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "ravi login",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"email\": \"ravi123@gmail.com\",\r\n  \"password\": \"123456\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:5000/api/auth/login",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "auth",
+            "login"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "ravi investment",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "au",
+            "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhMmZmODgwMzlhN2NiMGFiNTRlY2M1MyIsImlhdCI6MTc4MTU5MzYxNiwiZXhwIjoxNzgyMTk4NDE2fQ.2qXnBXMcV9oTdhAsoUxlpooOxWQnlkHMp5jFYglnxlY",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"investmentAmount\": 100000,\r\n  \"planName\": \"Gold Plan\",\r\n  \"startDate\": \"2026-06-15\",\r\n  \"endDate\": \"2026-12-15\",\r\n  \"dailyROI\": 1.5\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:5000/api/investments",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "investments"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "New Request",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": []
+    },
+    {
+      "name": "bharath login",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"email\": \"bharat@gmail.com\",\r\n  \"password\": \"123456\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:5000/api/auth/login",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "auth",
+            "login"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "bharath dashboard",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": []
+    },
+    {
+      "name": "New investment2",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhMmZmODgwMzlhN2NiMGFiNTRlY2M1MyIsImlhdCI6MTc4MTYwNzA1NCwiZXhwIjoxNzgyMjExODU0fQ.kWftE5DuQrsSUcMGa4reLYZS24DhoS8QlUeBi35uGRE",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"investmentAmount\": 100000,\r\n  \"planName\": \"Gold Plan\",\r\n  \"startDate\": \"2026-06-15\",\r\n  \"endDate\": \"2026-12-15\",\r\n  \"dailyROI\": 1.5\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:5000/api/investments",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "investments"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "referral-income/history",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhMjkzNTJiNDZlY2YyMjZhMGZhMjI3NSIsImlhdCI6MTc4MTYwNjQ2OSwiZXhwIjoxNzgyMjExMjY5fQ.bYC-ja3KTfTzt2r4v_sX2ChcGrZgsUlLyvS26gmzjlU",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:5000/api/referral-income/history",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "referral-income",
+            "history"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "wallet",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhMjkzNTJiNDZlY2YyMjZhMGZhMjI3NSIsImlhdCI6MTc4MTYwNjQ2OSwiZXhwIjoxNzgyMjExMjY5fQ.bYC-ja3KTfTzt2r4v_sX2ChcGrZgsUlLyvS26gmzjlU",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:5000/api/wallet",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "wallet"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "wallet transcation",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhMjkzNTJiNDZlY2YyMjZhMGZhMjI3NSIsImlhdCI6MTc4MTYwNjQ2OSwiZXhwIjoxNzgyMjExMjY5fQ.bYC-ja3KTfTzt2r4v_sX2ChcGrZgsUlLyvS26gmzjlU",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:5000/api/wallet/transactions",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "wallet",
+            "transactions"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "investments/:id/status",
+      "request": {
+        "method": "PATCH",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:5000/api/investments/:id/status",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "investments",
+            ":id",
+            "status"
+          ],
+          "variable": [
+            {
+              "key": "id",
+              "value": ""
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "users/profile",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": []
+    },
+    {
+      "name": "My_investment",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": []
+    },
+    {
+      "name": "Tree",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": []
+    },
+    {
+      "name": "api/investments/all",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhMjkzNTJiNDZlY2YyMjZhMGZhMjI3NSIsImlhdCI6MTc4MTExMjcxNCwiZXhwIjoxNzgxNzE3NTE0fQ.RA1VUV-fQmmxpHP-vgRocIHM0_C5NNHwu21XZb-ebg0",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:5000/api/investments/all",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "investments",
+            "all"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "api/users",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhMjkzNTJiNDZlY2YyMjZhMGZhMjI3NSIsImlhdCI6MTc4MTYwNjQ2OSwiZXhwIjoxNzgyMjExMjY5fQ.bYC-ja3KTfTzt2r4v_sX2ChcGrZgsUlLyvS26gmzjlU",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:5000/api/users",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "users"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Wallet History",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": []
+    },
+    {
+      "name": "admin/dashboard",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": []
+    },
+    {
+      "name": "users/profile",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer  eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhMjkzNTJiNDZlY2YyMjZhMGZhMjI3NSIsImlhdCI6MTc4MTg3MDcxNiwiZXhwIjoxNzgyNDc1NTE2fQ.bVwQXLi8Lqhg3-JMwIZvQQFAwO2UwcSHVvYLOd-6WZU",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"fullName\": \"Bharath Kumar Updated\",\r\n  \"email\": \"bharat@gmail.com\",\r\n  \"mobileNumber\": \"9876543255\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:5000/api/users/profile",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "users",
+            "profile"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "verify-email",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhMjkzNTJiNDZlY2YyMjZhMGZhMjI3NSIsImlhdCI6MTc4MTg3MDcxNiwiZXhwIjoxNzgyNDc1NTE2fQ.bVwQXLi8Lqhg3-JMwIZvQQFAwO2UwcSHVvYLOd-6WZU",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:5000/api/users/verify-email",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "users",
+            "verify-email"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "verify-mobile",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhMjkzNTJiNDZlY2YyMjZhMGZhMjI3NSIsImlhdCI6MTc4MTg3MDcxNiwiZXhwIjoxNzgyNDc1NTE2fQ.bVwQXLi8Lqhg3-JMwIZvQQFAwO2UwcSHVvYLOd-6WZU",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:5000/api/users/verify-mobile",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "users",
+            "verify-mobile"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "users/two-factor",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhMjkzNTJiNDZlY2YyMjZhMGZhMjI3NSIsImlhdCI6MTc4MTg3MDcxNiwiZXhwIjoxNzgyNDc1NTE2fQ.bVwQXLi8Lqhg3-JMwIZvQQFAwO2UwcSHVvYLOd-6WZU",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:5000/api/users/two-factor",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "users",
+            "two-factor"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "api/users/bank-details",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhMjkzNTJiNDZlY2YyMjZhMGZhMjI3NSIsImlhdCI6MTc4MTg3MDcxNiwiZXhwIjoxNzgyNDc1NTE2fQ.bVwQXLi8Lqhg3-JMwIZvQQFAwO2UwcSHVvYLOd-6WZU",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"bankName\": \"SBI\",\r\n  \"accountHolderName\": \"Bharath Kumar\",\r\n  \"accountNumber\": \"1234567890\",\r\n  \"ifscCode\": \"SBIN0001234\",\r\n  \"upiId\": \"bharath@upi\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:5000/api/users/bank-details",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "users",
+            "bank-details"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "api/users/referrals/direct",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhMjkzNTJiNDZlY2YyMjZhMGZhMjI3NSIsImlhdCI6MTc4MTg3MDcxNiwiZXhwIjoxNzgyNDc1NTE2fQ.bVwQXLi8Lqhg3-JMwIZvQQFAwO2UwcSHVvYLOd-6WZU",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:5000/api/users/referrals/direct",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "users",
+            "referrals",
+            "direct"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "api/users/referrals/tree",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhMjkzNTJiNDZlY2YyMjZhMGZhMjI3NSIsImlhdCI6MTc4MTg3MDcxNiwiZXhwIjoxNzgyNDc1NTE2fQ.bVwQXLi8Lqhg3-JMwIZvQQFAwO2UwcSHVvYLOd-6WZU",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:5000/api/users/referrals/tree",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "users",
+            "referrals",
+            "tree"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "api/auth/forgot-password",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "text",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"email\": \"bharat@gmail.com\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:5000/api/auth/forgot-password",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "auth",
+            "forgot-password"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "api/withdraw/request",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhMjkzNTJiNDZlY2YyMjZhMGZhMjI3NSIsImlhdCI6MTc4MjIxODQzNSwiZXhwIjoxNzgyODIzMjM1fQ.OIrNUnjRZ8A0oShDfa3u69l4CQclpA16bXilSQmdvWA",
+            "type": "text",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"amount\": 1000,\r\n  \"accountName\": \"bharat\",\r\n  \"accountNumber\": \"123456789012\",\r\n  \"ifscCode\": \"SBIN0001234\"\r\n}"
+        },
+        "url": {
+          "raw": "http://localhost:5000/api/withdraw/request",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "withdraw",
+            "request"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}

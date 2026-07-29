@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: "https://wealthflow-backend-ftlv.onrender.com/api",
+  baseURL: window.location.hostname === "localhost" ? "http://localhost:5000/api" : "https://wealthflow-backend-ftlv.onrender.com/api",
 });
 
 api.interceptors.request.use((config) => {

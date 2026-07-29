@@ -1,12 +1,28 @@
 import React, { useState } from "react";
-import { NavLink, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 
-import {  FaTachometerAlt,  FaChartLine,  FaUsers,  FaWallet,  FaUserCircle,  FaSignOutAlt,  FaMoneyBillWave,  FaBars,  FaTimes,    FaArrowDown,  FaArrowUp,} from "react-icons/fa";
+import {
+  FaTachometerAlt,
+  FaChartLine,
+  FaUsers,
+  FaWallet,
+  FaUserCircle,
+  FaSignOutAlt,
+  FaMoneyBillWave,
+  FaBars,
+  FaTimes,
+  FaArrowDown,
+  FaArrowUp,
+  FaHistory,
+  FaFileAlt,
+  FaCog
+} from "react-icons/fa";
 
 import "./Layout.css";
 
 function Layout({ children }) {
   const navigate = useNavigate();
+  const location = useLocation();
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
   let user = {};
@@ -31,47 +47,102 @@ function Layout({ children }) {
     setSidebarOpen(false);
   };
 
-  const menuItems = [
-    {
-      path: "/dashboard",
-      name: "Dashboard",
-      icon: <FaTachometerAlt />,
-    },
-    {
-      path: "/investments",
-      name: "Investments",
-      icon: <FaChartLine />,
-    },
-    {
-      path: "/deposit",
-      name: "Deposit",
-      icon: <FaArrowDown />,
-    },
-    {
-      path: "/withdraw",
-      name: "Withdraw",
-      icon: <FaArrowUp />,
-    },
-    {
-      path: "/wallet",
-      name: "Wallet",
-      icon: <FaWallet />,
-    },
-    {
-      path: "/referrals",
-      name: "Referrals",
-      icon: <FaUsers />,
-    },
-    {
-      path: "/referral-income",
-      name: "Referral Income",
-      icon: <FaMoneyBillWave />,
-    },
-       {
-      path: "/profile",
-      name: "Profile",
-      icon: <FaUserCircle />,
-    },
+  const isAdmin = user?.role === "admin";
+
+  const menuItems = isAdmin
+    ? [
+        {
+          path: "/admin?tab=dashboard",
+          name: "Dashboard",
+          icon: <FaTachometerAlt />,
+        },
+        {
+          path: "/admin?tab=users",
+          name: "Users",
+          icon: <FaUsers />,
+        },
+        {
+          path: "/admin?tab=investments",
+          name: "Investments",
+          icon: <FaChartLine />,
+        },
+        {
+          path: "/admin?tab=deposits",
+          name: "Deposits",
+          icon: <FaArrowDown />,
+        },
+        {
+          path: "/admin?tab=withdrawals",
+          name: "Withdrawals",
+          icon: <FaArrowUp />,
+        },
+        {
+          path: "/admin?tab=roi",
+          name: "ROI History",
+          icon: <FaHistory />,
+        },
+        {
+          path: "/admin?tab=referral",
+          name: "Referral Income",
+          icon: <FaMoneyBillWave />,
+        },
+        {
+          path: "/admin?tab=wallet",
+          name: "Wallet Transactions",
+          icon: <FaHistory />,
+        },
+        {
+          path: "/admin?tab=reports",
+          name: "Reports",
+          icon: <FaFileAlt />,
+        },
+        {
+          path: "/admin?tab=settings",
+          name: "Settings",
+          icon: <FaCog />,
+        },
+      ]
+    : [
+        {
+          path: "/dashboard",
+          name: "Dashboard",
+          icon: <FaTachometerAlt />,
+        },
+        {
+          path: "/investments",
+          name: "Investments",
+          icon: <FaChartLine />,
+        },
+        {
+          path: "/deposit",
+          name: "Deposit",
+          icon: <FaArrowDown />,
+        },
+        {
+          path: "/withdraw",
+          name: "Withdraw",
+          icon: <FaArrowUp />,
+        },
+        {
+          path: "/wallet",
+          name: "Wallet",
+          icon: <FaWallet />,
+        },
+        {
+          path: "/referrals",
+          name: "Referrals",
+          icon: <FaUsers />,
+        },
+        {
+          path: "/referral-income",
+          name: "Referral Income",
+          icon: <FaMoneyBillWave />,
+        },
+        {
+          path: "/profile",
+          name: "Profile",
+          icon: <FaUserCircle />,
+        },
       ];
 
   return (
@@ -117,19 +188,31 @@ function Layout({ children }) {
             <h2>
               Wealth<span>Flow</span>
             </h2>
+            {isAdmin && (
+              <div style={{ marginTop: "6px" }}>
+                <span className="admin-badge" style={{ display: "inline-block", fontSize: "10px", padding: "3px 8px", backgroundColor: "#dc2626", color: "white", borderRadius: "4px", textTransform: "uppercase", fontWeight: "700", letterSpacing: "1px" }}>Admin Control</span>
+              </div>
+            )}
           </div>
 
           <nav className="nav-links">
-            {menuItems.map((item) => (
-              <NavLink
-                key={item.path}
-                to={item.path}
-                onClick={closeSidebar}
-              >
-                {item.icon}
-                <span>{item.name}</span>
-              </NavLink>
-            ))}
+            {menuItems.map((item) => {
+              const currentPath = location.pathname + location.search;
+              const isActive = (item.path === "/admin?tab=dashboard" && (currentPath === "/admin" || currentPath === "/admin?tab=dashboard")) || 
+                               (item.path === currentPath);
+
+              return (
+                <Link
+                  key={item.path}
+                  to={item.path}
+                  className={isActive ? "active" : ""}
+                  onClick={closeSidebar}
+                >
+                  {item.icon}
+                  <span>{item.name}</span>
+                </Link>
+              );
+            })}
           </nav>
 
         </div>

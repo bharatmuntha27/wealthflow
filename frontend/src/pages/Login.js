@@ -53,7 +53,11 @@ const response = await api.post(
         JSON.stringify(response.data.user)
       );
 
-      navigate("/dashboard");
+      if (response.data.user?.role === "admin") {
+        navigate("/admin");
+      } else {
+        navigate("/dashboard");
+      }
     } catch (err) {
       setError(
         err.response?.data?.message ||

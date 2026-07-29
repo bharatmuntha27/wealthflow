@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import axios from "axios";
+import api from "../api/axios";
 import {  FaWallet, FaChartLine,  FaUsers,  FaArrowDown,  FaArrowUp,  FaSearch} from "react-icons/fa";
 
 import Layout from "../components/Layout/Layout";
@@ -56,18 +56,7 @@ function Wallet() {
 
     try {
 
-      const token =
-        localStorage.getItem("token");
-
-      const res =
-        await axios.get(
-          "http://localhost:5000/api/wallet",
-          {
-            headers: {
-              Authorization: `Bearer ${token}`,
-            },
-          }
-        );
+      const res = await api.get("/wallet");
 
       setWallet(res.data.data);
 
@@ -83,18 +72,7 @@ function Wallet() {
 
     try {
 
-      const token =
-        localStorage.getItem("token");
-
-      const res =
-        await axios.get(
-          "http://localhost:5000/api/wallet/history",
-          {
-            headers: {
-              Authorization: `Bearer ${token}`,
-            },
-          }
-        );
+      const res = await api.get("/wallet/history");
 
       setTransactions(
         res.data.transactions

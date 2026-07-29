@@ -3,6 +3,7 @@ const router = express.Router();
 
 const {
   createWithdrawal,
+  getMyWithdrawals,
 } = require("../controllers/withdrawController");
 
 const {
@@ -13,6 +14,12 @@ router.post(
   "/request",
   protect,
   createWithdrawal
+);
+
+router.get(
+  "/my",
+  protect,
+  getMyWithdrawals
 );
 
 module.exports = router;

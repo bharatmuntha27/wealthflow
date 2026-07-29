@@ -15,6 +15,7 @@ const userRoutes = require("./routes/userRoutes");
 const adminRoutes = require("./routes/adminRoutes");
 // const paymentRoutes = require("./routes/paymentRoutes");
 const withdrawRoutes =require("./routes/withdrawRoutes");
+const depositRoutes = require("./routes/depositRoutes");
 
 // ROI Cron
 require("./cron/roiCron");
@@ -82,6 +83,7 @@ app.use("/api/wallet", walletRoutes);
 app.use("/api/users", userRoutes);
 app.use("/api/admin", adminRoutes);
 app.use("/api/withdraw", withdrawRoutes);
+app.use("/api/deposits", depositRoutes);
 // app.use("/api/payment", paymentRoutes);
 
 // 404 Handler

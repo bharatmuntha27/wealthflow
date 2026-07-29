@@ -1,0 +1,322 @@
+.withdraw-page {
+  padding: 20px;
+  background-color: #f8fafc;
+  min-height: calc(100vh - 100px);
+}
+
+.withdraw-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+@media (max-width: 968px) {
+  .withdraw-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+.withdraw-form-card,
+.withdraw-history-card {
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+  padding: 30px;
+  border: 1px solid #e2e8f0;
+}
+
+.withdraw-header {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+.withdraw-icon {
+  background: linear-gradient(135deg, #ef4444, #b91c1c);
+  color: white;
+  width: 50px;
+  height: 50px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+}
+
+.withdraw-header h1 {
+  font-size: 24px;
+  font-weight: 700;
+  color: #1e293b;
+  margin: 0;
+}
+
+.withdraw-header p {
+  font-size: 14px;
+  color: #64748b;
+  margin: 4px 0 0 0;
+}
+
+.balance-card-withdraw {
+  background: linear-gradient(135deg, #1e293b, #0f172a);
+  color: white;
+  padding: 25px;
+  border-radius: 14px;
+  margin-bottom: 25px;
+  box-shadow: 0 8px 16px rgba(15, 23, 42, 0.15);
+}
+
+.balance-card-withdraw .balance-top {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #94a3b8;
+  font-size: 14px;
+}
+
+.balance-card-withdraw h2 {
+  font-size: 32px;
+  font-weight: 700;
+  margin: 10px 0;
+  color: #38bdf8;
+}
+
+.balance-card-withdraw p {
+  margin: 0;
+  font-size: 13px;
+  color: #cbd5e1;
+}
+
+.withdraw-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-group label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #475569;
+}
+
+.form-group input {
+  padding: 12px 16px;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 15px;
+  transition: all 0.2s;
+  outline: none;
+  background-color: #f8fafc;
+}
+
+.form-group input:focus {
+  border-color: #ef4444;
+  background-color: white;
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
+}
+
+.input-with-icon {
+  position: relative;
+}
+
+.input-with-icon input {
+  padding-left: 42px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.field-icon {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #94a3b8;
+  font-size: 15px;
+}
+
+.quick-amounts {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.amount-btn {
+  background-color: #f1f5f9;
+  border: 1px solid #e2e8f0;
+  color: #475569;
+  padding: 8px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.2s;
+}
+
+.amount-btn:hover {
+  background-color: #e2e8f0;
+  color: #0f172a;
+}
+
+.amount-btn.active {
+  background-color: #ef4444;
+  color: white;
+  border-color: #ef4444;
+}
+
+.bank-section-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: #1e293b;
+  border-bottom: 2px solid #f1f5f9;
+  padding-bottom: 10px;
+  margin-top: 15px;
+  margin-bottom: 5px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.withdraw-submit-btn {
+  background: linear-gradient(135deg, #ef4444, #dc2626);
+  color: white;
+  border: none;
+  padding: 14px;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.1s, opacity 0.2s;
+  box-shadow: 0 4px 10px rgba(239, 68, 68, 0.3);
+  margin-top: 10px;
+}
+
+.withdraw-submit-btn:hover {
+  opacity: 0.95;
+}
+
+.withdraw-submit-btn:active {
+  transform: scale(0.98);
+}
+
+.withdraw-submit-btn:disabled {
+  background: #cbd5e1;
+  color: #94a3b8;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+/* History Card */
+.withdraw-history-card .history-header {
+  border-bottom: 2px solid #f1f5f9;
+  padding-bottom: 15px;
+  margin-bottom: 20px;
+}
+
+.withdraw-history-card .history-header h2 {
+  font-size: 18px;
+  font-weight: 700;
+  color: #1e293b;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.history-table-wrapper {
+  overflow-x: auto;
+  margin-top: 10px;
+}
+
+.history-table-wrapper table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.history-table-wrapper th {
+  padding: 12px 16px;
+  background-color: #f8fafc;
+  color: #64748b;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  border-bottom: 1.5px solid #e2e8f0;
+}
+
+.history-table-wrapper td {
+  padding: 16px;
+  border-bottom: 1px solid #f1f5f9;
+  font-size: 14px;
+}
+
+.date-cell {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #64748b;
+}
+
+.amount-cell {
+  font-weight: 700;
+  color: #1e293b;
+}
+
+.bank-info-cell {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.bank-info-cell strong {
+  color: #334155;
+  font-size: 14px;
+}
+
+.bank-info-cell span {
+  color: #64748b;
+  font-size: 12px;
+}
+
+.status-badge {
+  padding: 6px 12px;
+  border-radius: 9999px;
+  font-size: 12px;
+  font-weight: 700;
+  display: inline-block;
+}
+
+.status-badge.pending {
+  background-color: #fef3c7;
+  color: #d97706;
+}
+
+.status-badge.approved {
+  background-color: #dcfce7;
+  color: #15803d;
+}
+
+.status-badge.rejected {
+  background-color: #fee2e2;
+  color: #b91c1c;
+}
+
+.withdraw-loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60vh;
+  color: #64748b;
+}
+
+.no-data {
+  text-align: center;
+  color: #94a3b8;
+  padding: 30px !important;
+}
