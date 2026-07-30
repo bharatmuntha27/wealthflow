@@ -2,14 +2,11 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import api from "../api/axios";
 import {  FaWallet, FaChartLine,  FaUsers,  FaArrowDown,  FaArrowUp,  FaSearch} from "react-icons/fa";
-
 import Layout from "../components/Layout/Layout";
 import "./Wallet.css";
 
 function Wallet() {
-
   const navigate = useNavigate();
-
   const [wallet, setWallet] = useState({
     walletBalance: 0,
     totalROIEarned: 0,
@@ -17,45 +14,30 @@ function Wallet() {
   });
 
   const [transactions, setTransactions] = useState([]);
-
   const [loading, setLoading] =
     useState(true);
-
   const [search, setSearch] =
     useState("");
-
  useEffect(() => {
-
   const loadData = async () => {
     try {
-
       setLoading(true);
-
       await Promise.all([
         fetchWallet(),
         fetchTransactions(),
       ]);
 
     } catch (error) {
-
       console.log(error);
-
     } finally {
-
       setLoading(false);
-
     }
   };
-
   loadData();
-
 }, []);
 
-  
-  const fetchWallet = async () => {
-
+    const fetchWallet = async () => {
     try {
-
       const res = await api.get("/wallet");
 
       setWallet(res.data.data);

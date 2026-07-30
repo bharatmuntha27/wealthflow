@@ -360,87 +360,126 @@ const toggleTwoFactor = async () => {
 
   <div className="summary-grid">
 
-    <div className="summary-card wallet">
+  {/* ================= WALLET BALANCE ================= */}
+  <article className="summary-card wallet">
 
-      <div className="card-top">
-        <div className="summary-icon">
-          <FaWallet />
-        </div>
+    <div className="summary-card-header">
 
-        <div className="growth positive">
-          +12.5%
-        </div>
+      <div className="summary-icon">
+        <FaWallet />
       </div>
 
-      <p>Wallet Balance</p>
+      <span className="growth positive">
+        +12.5%
+      </span>
 
-      <h2>
-        ₹ {user.walletBalance?.toLocaleString() || 0}
+    </div>
+
+    <div className="summary-card-body">
+
+      <span className="summary-label">
+        Wallet Balance
+      </span>
+
+      <h2 className="summary-value">
+        ₹{Number(user.walletBalance || 0).toLocaleString("en-IN")}
       </h2>
 
     </div>
 
-    <div className="summary-card investment">
+  </article>
 
-      <div className="card-top">
-        <div className="summary-icon">
-          <FaChartLine />
-        </div>
 
-        <div className="growth positive">
-          Active
-        </div>
+  {/* ================= TOTAL INVESTMENT ================= */}
+  <article className="summary-card investment">
+
+    <div className="summary-card-header">
+
+      <div className="summary-icon">
+        <FaChartLine />
       </div>
 
-      <p>Total Investment</p>
+      <span className="growth positive">
+        Active
+      </span>
 
-      <h2>
-        ₹ {user.totalInvestment?.toLocaleString() || 0}
+    </div>
+
+    <div className="summary-card-body">
+
+      <span className="summary-label">
+        Total Investment
+      </span>
+
+      <h2 className="summary-value">
+        ₹{Number(user.totalInvestment || 0).toLocaleString("en-IN")}
       </h2>
 
     </div>
 
-    <div className="summary-card roi">
+  </article>
 
-      <div className="card-top">
-        <div className="summary-icon">
-          <FaCoins />
-        </div>
 
-        <div className="growth positive">
-          ROI
-        </div>
+  {/* ================= TOTAL ROI ================= */}
+  <article className="summary-card roi">
+
+    <div className="summary-card-header">
+
+      <div className="summary-icon">
+        <FaCoins />
       </div>
 
-      <p>Total ROI Earned</p>
+      <span className="growth positive">
+        ROI
+      </span>
 
-      <h2>
-        ₹ {user.totalROIEarned?.toLocaleString() || 0}
+    </div>
+
+    <div className="summary-card-body">
+
+      <span className="summary-label">
+        Total ROI Earned
+      </span>
+
+      <h2 className="summary-value">
+        ₹{Number(user.totalROIEarned || 0).toLocaleString("en-IN")}
       </h2>
 
     </div>
 
-    <div className="summary-card referral">
+  </article>
 
-      <div className="card-top">
-        <div className="summary-icon">
-          <FaUsers />
-        </div>
 
-        <div className="growth positive">
-          Team
-        </div>
+  {/* ================= REFERRAL INCOME ================= */}
+  <article className="summary-card referral">
+
+    <div className="summary-card-header">
+
+      <div className="summary-icon">
+        <FaUsers />
       </div>
 
-      <p>Referral Income</p>
+      <span className="growth positive">
+        Team
+      </span>
 
-      <h2>
-        ₹ {user.totalLevelIncomeEarned?.toLocaleString() || 0}
+    </div>
+
+    <div className="summary-card-body">
+
+      <span className="summary-label">
+        Referral Income
+      </span>
+
+      <h2 className="summary-value">
+        ₹{Number(user.totalLevelIncomeEarned || 0).toLocaleString("en-IN")}
       </h2>
 
     </div>
 
-  </div>
+  </article>
+
+</div>
 
 </div>
 

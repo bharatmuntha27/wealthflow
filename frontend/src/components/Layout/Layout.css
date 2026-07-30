@@ -140,6 +140,26 @@ input, select, textarea {
     box-shadow:0 12px 25px rgba(20,120,40,.25);
 }
 
+
+/* Logo */
+.logo {
+  display: flex;
+  align-items: center;
+  margin-right: 45px; /* Gap between WealthFlow and Home */
+}
+
+.logo img {
+  width: 45px;
+  height: 45px;
+  margin-right: 10px;
+}
+
+/* Menu */
+.menu {
+  display: flex;
+  align-items: center;
+  gap: 42px;
+}
 /* Logout */
 
 .logout-btn{
@@ -151,13 +171,7 @@ input, select, textarea {
     font-size:16px;
     font-weight:600;
     cursor:pointer;
-
-    background:linear-gradient(
-        135deg,
-        #0f7c2f,
-        #dce900
-    );
-
+    background:linear-gradient(135deg, #0f7c2f, #dce900 );
     position:relative;
     z-index:2;
 }
